@@ -1,11 +1,13 @@
 # 📦 OfflineBox
+<img width="986" height="673" alt="Screenshot 2026-10-06 070235" src="https://github.com/user-attachments/assets/e0d53d02-33cb-4c08-b304-b55c11331cd5" />
 
-**Satu aplikasi, banyak alat — semuanya 100% offline.**
+
+**Satu aplikasi, banyak alat semuanya 100% offline.**
 OfflineBox adalah "Swiss Army Knife" desktop berisi kumpulan utilitas yang berguna untuk programmer, pelajar, teknisi, pekerja IT, dan pengguna komputer biasa. Tampilannya bergaya **2D pixel art** dan sudah dilengkapi **tutorial di dalam aplikasi**.
 
-Berjalan di **Windows, Linux, dan macOS** — ditulis dengan Java murni (Swing), tanpa dependensi eksternal.
+Berjalan di **Windows, Linux, dan macOS**,ditulis dengan Java murni (Swing), tanpa dependensi eksternal.
 
-## ✨ Fitur (v1.0)
+## Features (v1.0)
 
 | Kategori | Alat |
 |----------|------|
@@ -15,12 +17,12 @@ Berjalan di **Windows, Linux, dan macOS** — ditulis dengan Java murni (Swing),
 | NETWORK  | Subnet Calculator (IPv4 + CIDR) |
 | UTILITY  | Password Generator, Timestamp Converter |
 
-## 🧰 Persyaratan
+## Requirements
 
 - **JDK 17 atau lebih baru** (dikembangkan untuk JDK 25).
 - Tidak perlu internet, tidak perlu library tambahan.
 
-## 🚀 Cara Menjalankan
+## How to run it
 
 ### Dari terminal (Windows / Linux / macOS)
 
@@ -32,7 +34,7 @@ javac -d out src/main/java/offlinebox/Main.java src/main/java/offlinebox/Modules
 java -cp out offlinebox.Main
 ```
 
-### Membuat file JAR (opsional)
+### Making JAR file (optional)
 
 ```bash
 jar --create --file offlinebox.jar --main-class offlinebox.Main -C out .
@@ -45,7 +47,7 @@ java -jar offlinebox.jar
 2. Klik kanan `src/main/java` → **Mark Directory as → Sources Root**.
 3. Buka `Main.java`, klik tombol ▶ di samping `main`.
 
-## 🎮 Cara Pakai
+##  How to use it (Indonesia language only)
 
 1. Pilih alat di daftar sebelah kiri.
 2. Isi kotak **INPUT**, lalu klik tombol aksi (ENCODE, FORMAT, HITUNG, dll).
@@ -58,7 +60,7 @@ Contoh cepat:
 - **Timestamp Converter**: ketik `1760000000` → klik DETIK -> TANGGAL.
 - **File Hasher**: pilih SHA-256 → PILIH FILE → bandingkan hash dengan yang diberikan situs pengunduh.
 
-## 📦 Membuat Installer (tanpa perlu Java di komputer pengguna)
+## Installer Maker (without Java in your devices)
 
 OfflineBox dibungkus dengan `jpackage` (sudah ada di dalam JDK) sehingga membawa runtime Java-nya sendiri.
 `jpackage` **tidak bisa cross-compile**: installer Windows harus dibuat di Windows, `.dmg` di macOS, `.deb` di Linux.
@@ -67,7 +69,7 @@ OfflineBox dibungkus dengan `jpackage` (sudah ada di dalam JDK) sehingga membawa
 
 File `.github/workflows/release.yml` membuat installer untuk ketiga OS sekaligus:
 
-```bash
+```
 git tag v1.0.0
 git push origin v1.0.0
 ```
@@ -76,7 +78,7 @@ Hasilnya (`.exe`, `.dmg`, `.deb`) otomatis muncul di halaman **Releases**. Bisa 
 
 ### Lokal (untuk uji coba di Linux)
 
-```bash
+```
 mkdir -p out dist
 javac --release 25 -d out src/main/java/offlinebox/*.java
 jar --create --file dist/offlinebox.jar --main-class offlinebox.Main -C out .
@@ -91,7 +93,7 @@ Catatan:
 - `macos-latest` menghasilkan build Apple Silicon (M1 dan seterusnya).
 - Untuk ikon sendiri, tambahkan `--icon` (`.ico` di Windows, `.icns` di macOS, `.png` di Linux).
 
-## 🔒 Keamanan
+## 🔒 Security
 
 - Tidak ada koneksi jaringan dan tidak ada telemetri.
 - Tidak menjalankan program/perintah sistem lain, tidak memakai `eval` atau reflection.
@@ -102,25 +104,19 @@ Catatan:
 
 > Catatan: tidak ada software yang 100% kebal. Karena ini aplikasi open source di komputer pengguna sendiri, "keamanan" di sini berarti aplikasi tidak melakukan hal berbahaya dan menangani input dengan aman. Jika menemukan celah atau bug, silakan buka *Issue*.
 
-## 🗂️ Struktur Proyek
-
-```
-offlinebox/
-├── README.md
-└── src/main/java/offlinebox/
-    ├── Main.java      # jendela, sidebar, tutorial, gaya pixel art
-    └── Modules.java   # semua alat
-```
-
-## ➕ Menambah Modul Baru
+##  Menambah Modul Baru
 
 1. Buat fungsi di `Modules.java` yang mengembalikan `JPanel` (untuk alat teks cukup pakai `io(new Op("NAMA", fungsi))`).
 2. Daftarkan di `all()` dengan kategori, nama, dan teks cara pakai.
 
-## 🗺️ Roadmap
+##  Roadmap
 
 Process Manager, Battery Health, File Renamer, Duplicate Finder, Folder Analyzer, Markdown Preview, Regex Tester, Port Checker, DNS Lookup, CSV Viewer, SQLite Viewer, Log Analyzer, QR Generator, Unit Converter, Color Picker.
 
-## 📄 Lisensi
+## Screenshots
+<img width="986" height="673" alt="Screenshot 2026-10-06 070516" src="https://github.com/user-attachments/assets/eb314c97-ecde-4491-8f0c-2f15485aa96d" />
+<br>
+<img width="986" height="673" alt="Screenshot 2026-10-06 070329" src="https://github.com/user-attachments/assets/504d12f2-0d6e-414e-848b-10639c5dd877" />
+<br>
+<img width="986" height="673" alt="Screenshot 2026-10-06 070313" src="https://github.com/user-attachments/assets/dbe3e6e7-75c5-4f1a-90ed-d88a443c40d0" />
 
-Tentukan sendiri sebelum upload (misalnya MIT).
